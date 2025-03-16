@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note Taking WebApp</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="left-menu-logo">
+	  Notes
+	  </div>
+    </div>
+    <div class="top-bar-right">	  
+	  <div class="language-switch language-toggle">
+            <input type="checkbox" id="language-toggle" class="language-toggle">
+            <label for="language-toggle" class="language-label">
+                <span class="language-option">DEF</span>
+                <span class="language-option">HY</span>
+                <span class="language-slider"></span>
+            </label>
+        </div>	
+		
+	  <!-- Light/Dark Mode Toggle (Single Icon) -->
+        <div class="night-mode-group">
+		<button class="night-mode-toggle" id="night-mode-toggle">
+            <i class='bx bx-sun' style='color:#686f7d' ></i>
+            <i class='bx bx-moon' style='color:#686f7d' ></i>
+        </button>
+		</div>
+      <div class="settings-icon" id="settings-icon">
+        <i class='bx bx-cog bx-flip-horizontal' style='color:#686f7d'  ></i>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Sidebar for Notes List and Search -->
+  <div class="sidebar" id="sidebar">
+    <div class="search-container">
+  <i class='bx bx-search' style='color:#686f7d'></i>
+  <input type="text" id="search-input" placeholder="Search notes...">
+</div>
+    <button id="add-note-btn"><i class="fas fa-plus"></i> New Note</button>
+    <div class="notes-list" id="notes-list"></div>
+  </div>
+
+  <!-- Main Note Editor -->
+  <div class="main-content">
+  <div class="note-header-title">
+    <input type="text" id="note-title" placeholder="Untitled note">
+    
+  </div>
+  <textarea id="note-input" placeholder="Start typing your note..."></textarea>
+  <div id="blank-notes-area" class="blank-notes-area">
+    Select a note or create a new one.
+  </div>
+  <hr class="hr-line">
+  <span id="last-saved"></span>
+</div>
+
+  <!-- Settings Modal -->
+<div class="settings-modal" id="settings-modal">
+  <div class="modal-content">
+    <span class="close-modal" id="close-settings-modal">&times;</span>
+    <h2>Settings</h2>
+    <div class="settings-section">
+      <h3>Data Management</h3>
+      <button id="export-notes">
+        <i class='bx bx-export' style='color:#686f7d'></i> Export Notes
+      </button>
+      <input type="file" id="import-notes" accept=".json" style="display: none;">
+      <button onclick="document.getElementById('import-notes').click()">
+        <i class='bx bx-import' style='color:#686f7d'></i> Import Notes
+      </button>
+    </div>
+    <div class="settings-section">
+      <h3>How to use</h3>
+      <p>1. Click "+ New Note" to create a new note.</p>
+      <p>2. Type in the title and body fields to add content.</p>
+      <p>3. Notes are saved automatically as you type.</p>
+      <p>4. Use the search bar to find notes by title or content.</p>
+      <p>5. Toggle the language switch to type in Armenian.</p>
+    </div>
+  </div>
+</div>
+
+  <!-- Confirmation Modal -->
+<div class="confirmation-modal" id="confirmation-modal">
+  <div class="modal-content">
+    <p>Are you sure you want to delete this note?</p>
+    <div class="modal-buttons">
+      <button id="confirm-delete" style="margin-bottom: 5px;">
+        <i class='bx bx-trash' style='color:#686f7d'></i> Delete
+      </button>
+      <button id="cancel-delete">
+        <i class='bx bx-x' style='color:#686f7d'></i> Cancel
+      </button>
+    </div>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,653 @@
+/* General Styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f7;
+  color: #1d1d1f;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.night-mode {
+  background-color: #1d1d1f;
+  color: #f5f5f7;
+}
+
+/* Customize the text selection color */
+        ::selection {
+            background-color: #D7E0F4; /* Background color of the selection */
+            color: #000; /* Text color of the selection */
+        }
+
+
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #F8F9FB;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+body.night-mode .top-bar {
+  background: #2c2c2e;
+  border-color: #3a3a3c;
+}
+
+
+.top-bar-left, .top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  color: #1d1d1f;
+  display: none; /* Hidden by default */
+  transition: color 0.3s, transform 0.2s;
+}
+
+.hamburger:hover {
+  
+}
+
+body.night-mode .hamburger {
+  color: #f5f5f7;
+}
+
+.left-menu-logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1d1d1f;
+  transition: color 0.3s;
+}
+
+body.night-mode .left-menu-logo {
+  color: #f5f5f7;
+}
+
+
+.night-mode-group {
+  height: 24px;
+  width: 24px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  cursor: pointer;
+  color: #1d1d1f;
+  transition: color 0.3s, transform 0.2s;
+  padding: 4px;
+}
+
+.night-mode-group:hover {
+  background-color: #EAEFFA;
+  border-radius: 4px;
+}
+
+.night-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #1c1c1e; /* Monochrome */
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px; /* Reduced roundness */
+    transition: background-color 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.night-mode-toggle i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.night-mode-toggle .bx.bx-sun {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.night-mode-toggle .bx.bx-moon {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+.night-mode-toggle.active .bx.bx-sun {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+.night-mode-toggle.active .bx.bx-moon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+body.night-mode .night-mode-toggle {
+  color: #f5f5f7;
+}
+
+/* Settings Icon */
+.settings-icon {
+  height: 24px;
+  width: 24px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  color: #1d1d1f;
+  transition: color 0.3s, transform 0.2s;
+  padding: 4px;
+}
+
+.settings-icon:hover {
+  background-color: #EAEFFA;
+  border-radius: 4px;
+}
+
+body.night-mode .settings-icon {
+  color: #f5f5f7;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px;
+  background: #FCFCFD;
+  border-right: 1px solid #e0e0e0;
+  padding: 5px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  height: calc(100vh - 60px);
+  position: fixed;
+  left: 0;
+  transition: left 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+body.night-mode .sidebar {
+  background: #2c2c2e;
+  border-color: #3a3a3c;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+/* Search Container */
+.search-container {
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.search-container i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #686f7d;
+}
+
+#search-input {
+  width: 240px;
+  padding: 10px 10px 10px 30px; /* Add padding for the icon */
+  font-size: 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+body.night-mode #search-input {
+  background: #3a3a3c;
+  border-color: #4a4a4c;
+  color: #f5f5f7;
+}
+
+
+/* Style for Import/Export, Delete, and Cancel Buttons */
+#export-notes, #import-notes + button, #confirm-delete, #cancel-delete {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  color: #1c1c1e;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+#export-notes:hover, #import-notes + button:hover, #confirm-delete:hover, #cancel-delete:hover {
+  background-color: rgba(0, 122, 255, 0.1);
+}
+
+body.night-mode #export-notes, body.night-mode #import-notes + button, body.night-mode #confirm-delete, body.night-mode #cancel-delete {
+  color: #f5f5f7;
+  border-color: #4a4a4c;
+}
+
+
+
+/* Notes List */
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Note Item */
+.note-item {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.note-item.active {
+  background: #EEEFF2;
+}
+
+.note-item:hover {
+  background: #EEEFF2;
+}
+
+body.night-mode .note-item {
+
+}
+
+body.night-mode .note-item.active {
+  background: #4A4A4C; /* Darker background for active note in night mode */
+}
+
+body.night-mode .note-item:hover {
+  background: #4a4a4c;
+}
+
+.note-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-header strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1d1d1f;
+  transition: color 0.3s;
+}
+
+body.night-mode .note-header strong {
+  color: #f5f5f7;
+}
+
+.delete-note {
+  color: #ff3b30;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.delete-note:hover {
+  transform: scale(1.1);
+}
+
+.note-item p {
+  font-size: 13px;
+  color: #686F7D;
+  margin: 0;
+  transition: color 0.3s;
+}
+
+body.night-mode .note-item p {
+  color: #a1a1a6;
+}
+
+.note-item .last-saved {
+  font-size: 12px;
+  color: #686F7D;
+  transition: color 0.3s;
+}
+
+body.night-mode .note-item .last-saved {
+  color: #8e8e93;
+}
+
+/* Add Note Button */
+#add-note-btn {
+  width: 282px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: transparent;
+  color: #1c1c1e; /* Monochrome */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px; /* Reduced roundness */
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+}
+
+#add-note-btn:hover {
+  background-color: rgba(0, 122, 255, 0.1); /* Light blue hover */
+}
+
+button:active {
+    transform: scale(0.95); /* Slight scale-down effect */
+    transition: transform 0.1s ease;
+}
+
+body.night-mode #add-note-btn {
+  color: #ffffff;
+  border-color: #4a4a4c;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #ffffff;
+  margin-left: 300px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  transition: background-color 0.3s, margin-left 0.3s;
+}
+
+body.night-mode .main-content {
+  background: #2c2c2e;
+}
+
+
+#note-title {
+  width: 98%;
+  padding: 10px;
+  font-size: 20px;
+  border: 0;
+  border-bottom: 1px solid #e0e0e0;
+  background: transparent;
+  color: #2E3138;
+}
+
+#note-title:focus {
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+body.night-mode #note-title {
+  border-color: #4a4a4c;
+  color: #f5f5f7;
+}
+
+#last-saved {
+  font-size: 12px;
+  color: #86868b;
+  transition: color 0.3s;
+  margin-left: 10px;
+}
+
+body.night-mode #last-saved {
+  color: #8e8e93;
+}
+
+/* HR lines*/
+.hr-line {
+	margin: 0px;
+	border: none;
+	height: 1px;
+	background-color: #e0e0e0;
+}
+
+/* Note Input */
+#note-input {
+  width: 96%;
+  height: calc(100vh - 180px);
+  padding: 10px;
+  font-size: 18px;
+  resize: none;
+  background: transparent;
+  color: #1d1d1f;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.3s;
+  border: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#note-input:focus {
+  outline: none;
+  border: 0;
+}
+
+body.night-mode #note-input {
+  border-color: #4a4a4c;
+  color: #f5f5f7;
+}
+
+/* Settings Modal */
+.settings-modal, .confirmation-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1002;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.settings-modal .modal-content, .confirmation-modal .modal-content {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  position: relative;
+  animation: slideIn 0.3s;
+}
+
+body.night-mode .settings-modal .modal-content,
+body.night-mode .confirmation-modal .modal-content {
+  background: #2c2c2e;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.settings-modal h2, .confirmation-modal p {
+  margin: 0 0 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+body.night-mode .settings-modal h2,
+body.night-mode .confirmation-modal p {
+  color: #f5f5f7;
+}
+
+.settings-section {
+  margin-bottom: 20px;
+}
+
+.settings-section h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1d1d1f;
+}
+
+body.night-mode .settings-section h3 {
+  color: #f5f5f7;
+}
+
+.settings-section button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.settings-section button:hover {
+  background: #005bb5;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #1d1d1f;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.close-modal:hover {
+  transform: scale(1.1);
+}
+
+body.night-mode .close-modal {
+  color: #f5f5f7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger on mobile */
+  }
+
+  .sidebar {
+    left: -300px;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+
+/* Blank Notes Area */
+.blank-notes-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px);
+  font-size: 18px;
+  color: #686f7d;
+  transition: color 0.3s;
+}
+
+body.night-mode .blank-notes-area {
+  color: #a1a1a6;
+}
+
+
+
+
+
+
+/* Language Switch */
+.language-switch {
+    display: inline-block;
+    position: relative;
+}
+
+.language-toggle input {
+    display: none;
+}
+
+.language-label {
+    display: flex;
+    align-items: center;
+    width: 75px; /* 100px * 0.75 */
+    height: 30px; /* 40px * 0.75 */
+    background-color: #e0e0e0;
+    border-radius: 7.5px; /* 10px * 0.75 */
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.language-option {
+    flex: 1;
+    text-align: center;
+    font-size: 10.5px; /* 14px * 0.75 */
+    font-weight: 500;
+    color: #8e8e93;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.language-slider {
+    position: absolute;
+    width: 37.5px; /* 50px * 0.75 */
+    height: 27px; /* 36px * 0.75 */
+    background-color: #ffffff;
+    border-radius: 6px; /* 8px * 0.75 */
+    box-shadow: 0 1.5px 3.75px rgba(0, 0, 0, 0.2);
+    left: 1.5px; /* 2px * 0.75 */
+    top: 1.5px; /* 2px * 0.75 */
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.language-toggle:checked + .language-label {
+    background-color: #007aff;
+}
+
+.language-toggle:checked + .language-label .language-slider {
+    transform: translateX(34.5px); /* 46px * 0.75 */
+}
+
+.language-toggle:checked + .language-label .language-option:first-child {
+    color: #ffffff;
+}
+
+.language-toggle:checked + .language-label .language-option:last-child {
+    color: #8e8e93;
+}
