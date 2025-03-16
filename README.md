@@ -14,6 +14,7 @@ Note-taking web application that allows users to create, edit, delete, and searc
 **Future Updates**
 - Keyboard shortcut to toggle language.
 - Building, saving and importing custom layouts using JSON files.
+- Language toggle to effect on the search bar.
 
 **License**
 This project is open-source and available under the MIT License.
