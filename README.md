@@ -1,6 +1,6 @@
 # Note-Taking Web App with Custom Keyboard Layout
 
-Note-taking web application that allows users to create, edit, delete, and search notes. It supports light/dark mode, language toggling (English/Armenian, with custom layout). All data is saved in user's browser storage and can be exported and imorted using JSON files.
+Note-taking web application that allows users to create, edit, delete, and search notes. It supports light/dark mode, language toggling (English/Any other desierd language, with custom layout). All data is saved in user's browser storage and can be exported and imorted using JSON files.
 
 **Live preview**: Go to the [Note Taking and Custom Layout](https://samuelabyan.github.io/note-taking-custom-keylayout) to use the webapp.
 
