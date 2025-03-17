@@ -11,10 +11,13 @@ Note-taking web application that allows users to create, edit, delete, and searc
 
 **Use case**: When connecting a physical keyboard to iOS or iPadOS, keyboard layouts are limited. This simple implementation gives possibility to configure personal layouts.
 
-**Future Updates**
+**Future updates**
 - Keyboard shortcut to toggle language.
 - Building, saving and importing custom layouts using JSON files.
+
+**Issues to fix**
 - Language toggle to effect on the search bar.
+- Language toggle function to not affect numpad symbols.
 
 **License**
 This project is open-source and available under the MIT License.
