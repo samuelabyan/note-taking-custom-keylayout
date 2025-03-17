@@ -19,5 +19,4 @@ Note-taking web application that allows users to create, edit, delete, and searc
 - Language toggle to effect on the search bar.
 - Language toggle function to not affect numpad symbols.
 
-**License**
-This project is open-source and available under the MIT License.
+**License**: This project is open-source and available under the MIT License.
