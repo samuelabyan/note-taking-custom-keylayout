@@ -14,7 +14,7 @@ Note-taking web application that allows users to create, edit, delete, and searc
 **Future updates**
 - Keyboard shortcut to toggle language.
 - Build, save and import custom layouts using JSON files.
-- Armenian voice recognition.
+- Voice recognition.
 
 **Issues to fix**
 - Language toggle to effect on the search bar.
