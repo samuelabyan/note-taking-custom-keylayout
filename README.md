@@ -13,7 +13,8 @@ Note-taking web application that allows users to create, edit, delete, and searc
 
 **Future updates**
 - Keyboard shortcut to toggle language.
-- Building, saving and importing custom layouts using JSON files.
+- Build, save and import custom layouts using JSON files.
+- Armenian voice recognition.
 
 **Issues to fix**
 - Language toggle to effect on the search bar.
